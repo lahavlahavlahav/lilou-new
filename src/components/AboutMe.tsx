@@ -1,6 +1,3 @@
-
-
-
 import { ExternalLink } from 'lucide-react';
 export default function AboutMe() {
   return (
@@ -31,3 +28,23 @@ export default function AboutMe() {
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               היום אני לא רק יוצרת ספרים מפוסלים בהזמנה אישית, אלא גם מעבירה סדנאות שבהן אני משתפת את הטכניקות שלמדתי ואת האהבה לאומנות הזו. כל סדנה היא הזדמנות לראות איך אנשים מגלים את היכולת שלהם ליצור משהו יפה, משמעותי ומיוחד בידיים שלהם.
+            </p>
+            
+            <a
+              href="https://www.ynetnews.com/culture/article/bkdbzv3ubx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 mt-2 sm:mt-4 px-4 sm:px-6 py-3 sm:py-4 bg-cream hover:bg-soft-pink rounded-xl sm:rounded-2xl transition-all duration-300 group w-full sm:w-fit"
+            >
+              <div className="flex flex-col flex-1">
+                <span className="text-xs sm:text-sm text-warm-brown font-medium">כתבו עליי ב-Ynet Global</span>
+                <span className="text-deep-brown font-bold text-sm sm:text-base">קראו את הכתבה המלאה</span>
+              </div>
+              <ExternalLink className="w-5 h-5 text-primary group-hover:translate-x-[-4px] transition-transform flex-shrink-0" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
