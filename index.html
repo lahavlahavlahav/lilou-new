@@ -1,73 +1,902 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilou Books | פיסול ספרים וסדנאות יצירה</title>
+    <meta name="description" content="Lilou Books - פיסול ספרים אמנותי, סדנאות יצירה והזמנות אישיות. הפכי ספר לפסל ייחודי">
     
-    <!-- Primary Meta Tags -->
-    <title>Lilou Books | ספרים מפוסלים בעבודת יד - סדנאות והזמנות</title>
-    <meta name="title" content="Lilou Books | ספרים מפוסלים בעבודת יד - סדנאות והזמנות" />
-    <meta name="description" content="Lilou Books - אמנות פיסול ספרים בעבודת יד. הזמינו ספר מפוסל בהתאמה אישית, הצטרפו לסדנת יצירה בתל אביב, או רכשו תבניות ליצירה עצמאית. מתנה מושלמת לכל אירוע." />
-    <meta name="keywords" content="ספרים מפוסלים, פיסול ספרים, סדנת יצירה, מתנה מיוחדת, עבודת יד, book folding, book sculpture, תל אביב, סדנאות, מתנות" />
-    <meta name="author" content="להב - Lilou Books" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="Hebrew" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lilou Books | פיסול ספרים וסדנאות יצירה">
+    <meta property="og:description" content="פיסול ספרים אמנותי, סדנאות יצירה והזמנות אישיות">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Secular+One&display=swap" rel="stylesheet">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://liloubooks.com/" />
-    <meta property="og:title" content="Lilou Books | ספרים מפוסלים בעבודת יד" />
-    <meta property="og:description" content="אמנות פיסול ספרים בעבודת יד. הזמינו ספר מפוסל בהתאמה אישית, הצטרפו לסדנה, או רכשו תבניות ליצירה עצמאית." />
-    <meta property="og:image" content="https://liloubooks.com/og-image.jpg" />
-    <meta property="og:locale" content="he_IL" />
-    <meta property="og:site_name" content="Lilou Books" />
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://liloubooks.com/" />
-    <meta property="twitter:title" content="Lilou Books | ספרים מפוסלים בעבודת יד" />
-    <meta property="twitter:description" content="אמנות פיסול ספרים בעבודת יד. הזמינו ספר מפוסל בהתאמה אישית, הצטרפו לסדנה, או רכשו תבניות ליצירה עצמאית." />
-    <meta property="twitter:image" content="https://liloubooks.com/og-image.jpg" />
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#D4A574" />
-    <meta name="msapplication-TileColor" content="#D4A574" />
-    <link rel="canonical" href="https://liloubooks.com/" />
-    
-    <!-- Structured Data / Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Lilou Books",
-      "description": "אמנות פיסול ספרים בעבודת יד - סדנאות, הזמנות אישיות ותבניות",
-      "url": "https://liloubooks.com",
-      "telephone": "+972-50-253-4643",
-      "email": "contact@liloubooks.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "תל אביב",
-        "addressRegion": "תל אביב",
-        "addressCountry": "IL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "32.0853",
-        "longitude": "34.7818"
-      },
-      "openingHours": "Su-Th 09:00-18:00",
-      "priceRange": "$$",
-      "image": "https://liloubooks.com/og-image.jpg",
-      "sameAs": [
-        "https://www.instagram.com/liloubooks____/"
-      ]
-    }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FFFAF5',
+                        'warm-brown': '#6B4423',
+                        'light-brown': '#D4A574',
+                        'gold': '#B8860B',
+                        'soft-beige': '#F5EBE0',
+                        'primary': '#8B4513',
+                    },
+                    fontFamily: {
+                        'sans': ['Heebo', 'system-ui', 'sans-serif'],
+                        'display': ['Secular One', 'Heebo', 'sans-serif'],
+                    },
+                }
+            }
+        }
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Float Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(-1deg); }
+            75% { transform: translateY(-20px) rotate(1deg); }
+        }
+        
+        .float-animation {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .float-animation-delay-1 { animation-delay: 1s; animation-duration: 10s; }
+        .float-animation-delay-2 { animation-delay: 2s; animation-duration: 9s; }
+        .float-animation-delay-3 { animation-delay: 0.5s; animation-duration: 11s; }
+        .float-animation-delay-4 { animation-delay: 1.5s; animation-duration: 7s; }
+        
+        /* Accessibility Styles */
+        .a11y-high-contrast { filter: contrast(1.5) !important; }
+        .a11y-invert { filter: invert(1) hue-rotate(180deg) !important; }
+        .a11y-invert img { filter: invert(1) hue-rotate(180deg) !important; }
+        .a11y-big-cursor, .a11y-big-cursor * {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='black' stroke='white' stroke-width='1'%3E%3Cpath d='M4 4l16 8-7 2-2 7z'/%3E%3C/svg%3E") 0 0, auto !important;
+        }
+        .a11y-highlight-links a, .a11y-highlight-links button {
+            outline: 3px solid #FFD700 !important;
+            outline-offset: 2px !important;
+            background-color: #FFFACD !important;
+        }
+        .a11y-readable-font, .a11y-readable-font * {
+            font-family: Arial, Helvetica, sans-serif !important;
+            letter-spacing: 0.05em !important;
+        }
+        .a11y-stop-animations, .a11y-stop-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+        .a11y-dark-mode {
+            background-color: #1a1a1a !important;
+            color: #e0e0e0 !important;
+        }
+        .a11y-line-height, .a11y-line-height * {
+            line-height: 2 !important;
+        }
+        
+        /* Pulse Animation for Accessibility Button */
+        @keyframes pulse-a11y {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulse-a11y 2s ease-in-out infinite;
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for lightbox */
+        body.lightbox-open { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-cream font-sans">
+    <!-- ============== HEADER ============== -->
+    <header id="header" class="fixed top-0 right-0 left-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-light-brown/20">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i data-lucide="book-open" class="w-8 h-8 text-primary"></i>
+                <span class="font-display text-2xl text-warm-brown">Lilou Books</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-warm-brown hover:text-primary transition-colors font-medium">אודות</a>
+                <a href="#about-me" class="text-warm-brown hover:text-primary transition-colors font-medium">הסיפור שלי</a>
+                <a href="#workshops" class="text-warm-brown hover:text-primary transition-colors font-medium">סדנאות</a>
+                <a href="#gallery" class="text-warm-brown hover:text-primary transition-colors font-medium">גלריה</a>
+                <a href="#order" class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-warm-brown transition-colors font-medium">הזמנה אישית</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-warm-brown p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-cream border-t border-light-brown/20 px-4 py-4 flex flex-col gap-4">
+            <a href="#about" class="text-warm-brown hover:text-primary transition-colors font-medium text-right py-2">אודות</a>
+            <a href="#about-me" class="text-warm-brown hover:text-primary transition-colors font-medium text-right py-2">הסיפור שלי</a>
+            <a href="#workshops" class="text-warm-brown hover:text-primary transition-colors font-medium text-right py-2">סדנאות</a>
+            <a href="#gallery" class="text-warm-brown hover:text-primary transition-colors font-medium text-right py-2">גלריה</a>
+            <a href="#order" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-warm-brown transition-colors font-medium w-full text-center">הזמנה אישית</a>
+        </nav>
+    </header>
+    <!-- ============== HERO ============== -->
+    <section class="min-h-screen bg-gradient-to-b from-cream to-soft-beige flex flex-col items-center justify-center px-4 pt-20 pb-12 relative overflow-hidden">
+        <!-- Decorative Blurs -->
+        <div class="absolute top-40 right-10 w-32 h-32 bg-light-brown/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-40 left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl"></div>
+        
+        <!-- Floating Images - החלף את ה-src עם התמונות שלך -->
+        <div class="absolute top-32 right-4 md:right-16 w-28 md:w-36 opacity-90 hover:opacity-100 transition-opacity hidden sm:block float-animation">
+            <img src="images/date-book.png" alt="תאריך שחשוב לכם" class="w-full h-auto drop-shadow-xl rounded-lg hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="absolute top-48 left-4 md:left-20 w-24 md:w-32 opacity-90 hover:opacity-100 transition-opacity hidden sm:block float-animation float-animation-delay-1">
+            <img src="images/abstract-art.png" alt="אובייקט אומנותי מופשט" class="w-full h-auto drop-shadow-xl rounded-lg hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="absolute bottom-40 right-8 md:right-24 w-32 md:w-40 opacity-90 hover:opacity-100 transition-opacity hidden sm:block float-animation float-animation-delay-2">
+            <img src="images/love-word.png" alt="אהבה" class="w-full h-auto drop-shadow-xl rounded-lg hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="absolute bottom-48 left-8 md:left-16 w-20 md:w-28 opacity-90 hover:opacity-100 transition-opacity hidden sm:block float-animation float-animation-delay-3">
+            <img src="images/house-name.png" alt="בית או שם" class="w-full h-auto drop-shadow-xl rounded-lg hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="absolute top-64 right-1/4 w-24 md:w-32 opacity-90 hover:opacity-100 transition-opacity hidden sm:block float-animation float-animation-delay-4">
+            <img src="images/symbol-heart.png" alt="סמל או צורה" class="w-full h-auto drop-shadow-xl rounded-lg hover:scale-110 transition-transform duration-500">
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <i data-lucide="sparkles" class="w-6 h-6 text-gold"></i>
+                <span class="text-warm-brown/70 font-medium">אמנות פיסול ספרים</span>
+                <i data-lucide="sparkles" class="w-6 h-6 text-gold"></i>
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl text-warm-brown mb-6 leading-tight">
+                Lilou Books
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-warm-brown/70 mb-4 font-light">
+                הופכת ספרים ליצירות אמנות תלת-ממדיות
+            </p>
+            
+            <p class="text-lg text-warm-brown/70 mb-10 max-w-2xl mx-auto">
+                פיסול ספרים, סדנאות יצירה והזמנות אישיות. 
+                כל יצירה היא ייחודית ונוצרת באהבה ובמקצועיות.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#workshops" class="bg-primary text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-warm-brown transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    הרשמה לסדנה
+                </a>
+                <a href="#order" class="bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-xl text-lg font-medium hover:bg-primary hover:text-white transition-all">
+                    הזמנה אישית
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-warm-brown/50 hover:text-primary transition-colors">
+            <i data-lucide="arrow-down" class="w-8 h-8"></i>
+        </a>
+    </section>
+    <!-- ============== ABOUT ============== -->
+    <section id="about" class="py-20 px-4 bg-soft-beige">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-warm-brown text-center mb-4">אודות</h2>
+            <p class="text-warm-brown/70 text-center mb-12 text-lg">הסיפור מאחורי פיסול הספרים</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-light-brown/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-warm-brown mb-3">אהבה לספרים</h3>
+                    <p class="text-warm-brown/70">
+                        כל יצירה נולדת מתוך אהבה עמוקה לספרים ולאמנות. 
+                        הפיסול מעניק חיים חדשים לדפים.
+                    </p>
+                </div>
+                
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="palette" class="w-8 h-8 text-gold"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-warm-brown mb-3">יצירתיות ללא גבולות</h3>
+                    <p class="text-warm-brown/70">
+                        מלבבות ועד נופים מורכבים, כל רעיון יכול להפוך לפסל ספר מדהים.
+                    </p>
+                </div>
+                
+                <div class="bg-cream p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="w-16 h-16 bg-light-brown/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="book-marked" class="w-8 h-8 text-warm-brown"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-warm-brown mb-3">התאמה אישית</h3>
+                    <p class="text-warm-brown/70">
+                        כל הזמנה מותאמת אישית לפי הרצונות והחלומות שלך.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-cream rounded-2xl p-8 md:p-12 shadow-sm">
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-lg md:text-xl text-warm-brown/70 leading-relaxed">
+                        אני מאמינה שלספרים יש כוח מאגי. הם מלווים אותנו 
+                        לאורך השנים, מעבירים סיפורים מדור לדור, ושומרים על זכרונות. 
+                        בפיסול ספרים אני לוקחת את הקסם הזה ומעניקה לו צורה פיזית - יצירת אמנות תלת-ממדית 
+                        שמשלבת את האהבה שלי לספרים עם היצירתיות האמנותית.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============== ABOUT ME ============== -->
+    <section id="about-me" class="py-20 px-4 bg-cream">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-warm-brown text-center mb-4">הסיפור שלי</h2>
+            <p class="text-warm-brown/70 text-center mb-12 text-lg">להב ברק | אומנית ומנחת סדנאות פיסול וקיפול ספרים</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- החלף עם התמונה שלך -->
+                        <img src="images/lahav-barak.png" alt="להב ברק - מייסדת Lilou Books" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-light-brown/20 rounded-full blur-2xl -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-gold/20 rounded-full blur-2xl -z-10"></div>
+                </div>
+                
+                <!-- Story Side -->
+                <div class="flex flex-col gap-6">
+                    <div class="bg-soft-beige rounded-2xl p-6 relative">
+                        <i data-lucide="quote" class="w-8 h-8 text-gold/50 absolute top-4 right-4"></i>
+                        <p class="text-lg text-warm-brown leading-relaxed pr-10">
+                            בעלת תואר שני במנהל עסקים וטכנולוגיה, שבחרתי לשלב 
+                            את האהבה ליצירה עם הידע העסקי שרכשתי.
+                        </p>
+                    </div>
+                    
+                    <p class="text-warm-brown/70 leading-relaxed text-lg">
+                        הכל התחיל כתחביב - מהנאה לעבודת ידיים ומהרצון ליצור 
+                        משהו מיוחד ואישי כמחווה לחבר. קיפול אחר קיפול, עמוד אחר 
+                        עמוד, הספרים הישנים הפכו ליצירות אמנות ייחודיות.
+                    </p>
+                    
+                    <p class="text-warm-brown/70 leading-relaxed text-lg">
+                        מה שהתחיל כיצירה אחת לחבר, הפך במהרה לעשרות בקשות 
+                        ממשפחה, חברים ומכרים. אנשים התאהבו ברעיון שספר ישן 
+                        יכול להפוך למתנה כל כך מרגשת ומשמעותית - לא רק חפץ 
+                        דקורטיבי, אלא סיפור שלם שמספר על אהבה, זיכרון או 
+                        רגע מיוחד בחיים.
+                    </p>
+                    
+                    <p class="text-warm-brown/70 leading-relaxed text-lg">
+                        כשהבנתי שיש ביקוש אמיתי לאמנות הזו, החלטתי להפוך את 
+                        התשוקה שלי למקצוע. ליוויתי את הידע שצברתי בתואר השני 
+                        במנהל עסקים וטכנולוגיה עם האהבה שלי ליצירה בידיים, 
+                        והקמתי את Lilou Books.
+                    </p>
+                    
+                    <p class="text-warm-brown/70 leading-relaxed text-lg">
+                        היום אני לא רק יוצרת ספרים מפוסלים בהזמנה אישית, אלא גם 
+                        מעבירה סדנאות שבהן אני משתפת את הטכניקות שלמדתי 
+                        ואת האהבה לאומנות הזו. כל סדנה היא הזדמנות לראות 
+                        איך אנשים מגלים את היכולת שלהם ליצור משהו יפה, 
+                        משמעותי ומיוחד בידיים שלהם.
+                    </p>
+                    
+                    <!-- Press Link -->
+                    <div class="mt-4">
+                        <a href="https://www.ynetnews.com/culture/article/bkdbzv3ubx" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-l from-primary to-warm-brown text-white px-6 py-3 rounded-xl font-medium hover:opacity-90 transition-all shadow-lg hover:shadow-xl">
+                            <span>קראו את הכתבה עליי ב-Ynet</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============== WORKSHOPS ============== -->
+    <section id="workshops" class="py-20 px-4 bg-cream">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-warm-brown text-center mb-4">סדנאות פיסול ספרים</h2>
+            <p class="text-warm-brown/70 text-center mb-6 text-lg">למדי ליצור את הפסלים שלך בסדנה מעשירה ומהנה</p>
+            
+            <!-- Stats Badge -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex items-center gap-3 bg-gradient-to-l from-gold to-primary text-white px-8 py-4 rounded-full shadow-lg">
+                    <i data-lucide="award" class="w-7 h-7"></i>
+                    <div class="text-center">
+                        <span class="font-display text-2xl md:text-3xl">+500</span>
+                        <span class="text-white/90 mr-2">משתתפים יצרו ספר מפוסל בסדנאות</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Workshop Card - Open -->
+                <div class="bg-gradient-to-br from-soft-beige to-cream border-2 border-light-brown/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 text-gold mb-4">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span class="font-medium">סדנה פתוחה לקהל</span>
+                    </div>
+                    
+                    <h3 class="font-display text-2xl text-warm-brown mb-4">סדנת פיסול ספרים למתחילים</h3>
+                    
+                    <p class="text-warm-brown/70 mb-6">
+                        בסדנה תלמדו את הטכניקות הבסיסיות של פיסול ספרים ותצאו עם יצירה משלכם. 
+                        מתאים לכל הרמות, אין צורך בניסיון קודם.
+                    </p>
+                    
+                    <div class="flex flex-col gap-3 mb-8">
+                        <div class="flex items-center gap-3 text-warm-brown/70">
+                            <i data-lucide="clock" class="w-5 h-5 text-primary"></i>
+                            <span>משך הסדנה: כ-3 שעות</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-warm-brown/70">
+                            <i data-lucide="calendar" class="w-5 h-5 text-primary"></i>
+                            <span>מועדים קרובים זמינים בקישור</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://pay.grow.link/82c259dab99d2157be35462ff4b81091-Mjc4NjA5MQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full bg-primary text-white px-6 py-4 rounded-xl text-lg font-medium hover:bg-warm-brown transition-all shadow-lg">
+                        <span>הרשמה מהירה לסדנה</span>
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                
+                <!-- Workshop Card - Private -->
+                <div class="bg-gradient-to-br from-cream to-soft-beige border-2 border-gold/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-2 text-primary mb-4">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span class="font-medium">סדנה פרטית</span>
+                    </div>
+                    
+                    <h3 class="font-display text-2xl text-warm-brown mb-4">סדנה פרטית או קבוצתית</h3>
+                    
+                    <p class="text-warm-brown/70 mb-6">
+                        מושלם לימי הולדת, אירועי צוות, מסיבות רווקות או כל חגיגה מיוחדת. 
+                        הסדנה מותאמת לצרכים שלכם.
+                    </p>
+                    
+                    <div class="flex flex-col gap-3 mb-8">
+                        <div class="flex items-center gap-3 text-warm-brown/70">
+                            <i data-lucide="clock" class="w-5 h-5 text-gold"></i>
+                            <span>משך ומיקום גמישים</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-warm-brown/70">
+                            <i data-lucide="calendar" class="w-5 h-5 text-gold"></i>
+                            <span>בתיאום מראש</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#order" class="inline-flex items-center justify-center gap-2 w-full bg-gold text-white px-6 py-4 rounded-xl text-lg font-medium hover:bg-primary transition-all shadow-lg">
+                        צרו קשר לתיאום
+                    </a>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="bg-gradient-to-l from-primary to-warm-brown rounded-2xl p-8 md:p-12 text-center">
+                <h3 class="font-display text-2xl md:text-3xl text-white mb-4">רוצים להירשם עכשיו?</h3>
+                <p class="text-white/90 mb-6 text-lg">הרשמה מהירה ופשוטה - בחרו תאריך ומקום מתאים</p>
+                <a href="https://pay.grow.link/82c259dab99d2157be35462ff4b81091-Mjc4NjA5MQ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-cream text-warm-brown px-8 py-4 rounded-xl text-lg font-medium hover:bg-white transition-all transform hover:scale-105 shadow-lg">
+                    <span>להרשמה לסדנה</span>
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ============== GALLERY ============== -->
+    <section id="gallery" class="py-20 px-4 bg-soft-beige">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-warm-brown text-center mb-4">גלריה</h2>
+            <p class="text-warm-brown/70 text-center mb-12 text-lg">הצצה ליצירות שנוצרו בסטודיו</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+                <!-- Gallery items - החלף עם התמונות שלך -->
+                <button onclick="openLightbox(0)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/date-book.png" alt="תאריך שחשוב לכם" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">תאריך שחשוב לכם</span>
+                        <span class="text-white/80 text-sm">תאריך חתונה, יום הולדת או כל רגע משמעותי</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(1)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/abstract-art.png" alt="אובייקט אומנותי מופשט" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">אובייקט אומנותי מופשט</span>
+                        <span class="text-white/80 text-sm">פיסול מורכב בהשראת מנדלות ודפוסים גיאומטריים</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(2)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/love-word.png" alt="אהבה" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">אהבה או כל מילה שחשובה לכם</span>
+                        <span class="text-white/80 text-sm">מילה בעברית או באנגלית שמסמלת משהו אישי</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(3)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/house-name.png" alt="בית או שם" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">בית או שם של איש יקר</span>
+                        <span class="text-white/80 text-sm">הנצחת שם או סמל הבית - מתנה מושלמת לחנוכת בית</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(4)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/symbol-heart.png" alt="סמל או צורה" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">סמל או צורה</span>
+                        <span class="text-white/80 text-sm">לב, כוכב או כל צורה שתרצו - על מעמד עץ מיוחד</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(5)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/heart-ribbon.png" alt="לב עם סרט" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">לב עם סרט</span>
+                        <span class="text-white/80 text-sm">לב מפוסל עם סרט קשירה - מתנה רומנטית מושלמת</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(6)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/emblem-horses.png" alt="סמל משפחתי" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">סמל משפחתי</span>
+                        <span class="text-white/80 text-sm">סמל משפחתי או לוגו - מורשת שעוברת בדורות</span>
+                    </div>
+                </button>
+                
+                <button onclick="openLightbox(7)" class="relative aspect-square overflow-hidden rounded-xl group cursor-pointer bg-cream shadow-md hover:shadow-xl transition-shadow">
+                    <img src="images/name-rahav.png" alt="שם אישי" class="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-brown/90 via-warm-brown/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 text-center">
+                        <span class="text-white font-display text-lg mb-1">שם אישי</span>
+                        <span class="text-white/80 text-sm">השם שלכם או של מישהו יקר - מתנת בר/בת מצווה מושלמת</span>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <p class="text-warm-brown/70 mb-4">אהבתם משהו? כל יצירה ניתנת להזמנה בהתאמה אישית</p>
+                <a href="#order" class="bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-warm-brown transition-all shadow-md hover:shadow-lg inline-block">
+                    להזמנה אישית
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-light-brown transition-colors z-10">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        
+        <button onclick="event.stopPropagation(); prevImage()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-light-brown transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20">
+            <i data-lucide="chevron-right" class="w-10 h-10"></i>
+        </button>
+        
+        <button onclick="event.stopPropagation(); nextImage()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-light-brown transition-colors p-2 bg-white/10 rounded-full hover:bg-white/20">
+            <i data-lucide="chevron-left" class="w-10 h-10"></i>
+        </button>
+        
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="bg-cream rounded-2xl p-4 shadow-2xl">
+                <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[60vh] object-contain">
+            </div>
+            <div class="text-center mt-6">
+                <h3 id="lightbox-title" class="text-white font-display text-2xl mb-2"></h3>
+                <p id="lightbox-desc" class="text-white/80 text-lg max-w-md"></p>
+            </div>
+        </div>
+    </div>
+    <!-- ============== ORDER FORM ============== -->
+    <section id="order" class="py-20 px-4 bg-cream">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl text-warm-brown text-center mb-4">הזמנה אישית</h2>
+            <p class="text-warm-brown/70 text-center mb-12 text-lg">ספרו לי על היצירה שאתם חולמים עליה ואחזור אליכם במהירות</p>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Info Side -->
+                <div class="md:col-span-2 flex flex-col gap-6">
+                    <div class="bg-gradient-to-br from-soft-beige to-cream border border-light-brown/20 rounded-2xl p-6">
+                        <i data-lucide="gift" class="w-8 h-8 text-gold mb-4"></i>
+                        <h3 class="font-display text-xl text-warm-brown mb-2">מתנות מיוחדות</h3>
+                        <p class="text-warm-brown/70 text-sm">
+                            ספר מפוסל הוא מתנה ייחודית לימי הולדת, חתונות, בר מצווה ואירועים מיוחדים.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cream to-soft-beige border border-gold/20 rounded-2xl p-6">
+                        <i data-lucide="message-square" class="w-8 h-8 text-primary mb-4"></i>
+                        <h3 class="font-display text-xl text-warm-brown mb-2">תהליך פשוט</h3>
+                        <p class="text-warm-brown/70 text-sm">
+                            מלאו את הטופס, אחזור אליכם לשיחת ייעוץ, ויחד נתכנן את היצירה המושלמת.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Form Side -->
+                <div class="md:col-span-3">
+                    <form action="https://formspree.io/f/mzzjvvqv" method="POST" class="bg-white rounded-2xl p-8 shadow-lg border border-light-brown/10">
+                        <div class="flex flex-col gap-5">
+                            <!-- Name -->
+                            <div>
+                                <label class="flex items-center gap-2 text-warm-brown font-medium mb-2">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                    שם מלא
+                                </label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 border border-light-brown/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="השם שלך">
+                            </div>
+                            
+                            <!-- Email & Phone -->
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="flex items-center gap-2 text-warm-brown font-medium mb-2">
+                                        <i data-lucide="mail" class="w-4 h-4"></i>
+                                        אימייל
+                                    </label>
+                                    <input type="email" name="email" required class="w-full px-4 py-3 border border-light-brown/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="your@email.com" dir="ltr">
+                                </div>
+                                <div>
+                                    <label class="flex items-center gap-2 text-warm-brown font-medium mb-2">
+                                        <i data-lucide="phone" class="w-4 h-4"></i>
+                                        טלפון
+                                    </label>
+                                    <input type="tel" name="phone" class="w-full px-4 py-3 border border-light-brown/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="050-0000000" dir="ltr">
+                                </div>
+                            </div>
+                            
+                            <!-- Occasion -->
+                            <div>
+                                <label class="flex items-center gap-2 text-warm-brown font-medium mb-2">
+                                    <i data-lucide="gift" class="w-4 h-4"></i>
+                                    לאיזה אירוע?
+                                </label>
+                                <select name="occasion" class="w-full px-4 py-3 border border-light-brown/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-white">
+                                    <option value="">בחרו אירוע</option>
+                                    <option value="יום הולדת">יום הולדת</option>
+                                    <option value="חתונה">חתונה</option>
+                                    <option value="בר/בת מצווה">בר/בת מצווה</option>
+                                    <option value="יום נישואין">יום נישואין</option>
+                                    <option value="מתנה">מתנה</option>
+                                    <option value="עיצוב הבית">עיצוב הבית</option>
+                                    <option value="אחר">אחר</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div>
+                                <label class="flex items-center gap-2 text-warm-brown font-medium mb-2">
+                                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                                    ספרו לי על היצירה שאתם רוצים
+                                </label>
+                                <textarea name="message" required rows="5" class="w-full px-4 py-3 border border-light-brown/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="תארו את הספר שאתם חולמים עליו - צורה, סגנון, צבעים, הקדשה מיוחדת..."></textarea>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full bg-primary text-white px-6 py-4 rounded-xl text-lg font-medium hover:bg-warm-brown transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                <span>שליחת הבקשה</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============== FOOTER ============== -->
+    <footer class="bg-warm-brown text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Logo & About -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                        <span class="font-display text-2xl">Lilou Books</span>
+                    </div>
+                    <p class="text-white/80">
+                        פיסול ספרים אמנותי, סדנאות יצירה והזמנות אישיות. 
+                        הופכת ספרים לפסלים ייחודיים.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-display text-xl mb-4">ניווט מהיר</h3>
+                    <div class="flex flex-col gap-2">
+                        <a href="#about" class="text-white/80 hover:text-white transition-colors">אודות</a>
+                        <a href="#about-me" class="text-white/80 hover:text-white transition-colors">הסיפור שלי</a>
+                        <a href="#workshops" class="text-white/80 hover:text-white transition-colors">סדנאות</a>
+                        <a href="#gallery" class="text-white/80 hover:text-white transition-colors">גלריה</a>
+                        <a href="#order" class="text-white/80 hover:text-white transition-colors">הזמנה אישית</a>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-display text-xl mb-4">יצירת קשר</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:hello@liloubooks.com" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span dir="ltr">hello@liloubooks.com</span>
+                        </a>
+                        <a href="https://instagram.com/liloubooks" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                            <span dir="ltr">@liloubooks</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-white/20 pt-8 text-center text-white/60">
+                <p>© 2024 Lilou Books. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ============== ACCESSIBILITY WIDGET ============== -->
+    <button id="a11y-btn" class="fixed bottom-6 left-6 z-[9999] w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 pulse-animation" title="נגישות">
+        <i data-lucide="accessibility" class="w-7 h-7"></i>
+    </button>
+    
+    <div id="a11y-panel" class="fixed bottom-24 left-6 z-[9999] w-80 max-h-[80vh] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden hidden">
+        <!-- Header -->
+        <div class="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="accessibility" class="w-5 h-5"></i>
+                <span class="font-bold">הגדרות נגישות</span>
+            </div>
+            <button id="a11y-close" class="hover:bg-blue-500 p-1 rounded">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+        
+        <!-- Content -->
+        <div class="p-4 overflow-y-auto max-h-[60vh] flex flex-col gap-3">
+            <!-- Font Size -->
+            <div class="bg-gray-50 rounded-xl p-3">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-medium flex items-center gap-2">
+                        <i data-lucide="type" class="w-4 h-4"></i>
+                        גודל טקסט
+                    </span>
+                    <span id="font-size-value" class="text-sm text-gray-500">100%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="decreaseFontSize()" class="flex-1 bg-white border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition-colors flex items-center justify-center">
+                        <i data-lucide="zoom-out" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="increaseFontSize()" class="flex-1 bg-white border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition-colors flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Toggle Options -->
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="toggleA11y('high-contrast')" id="btn-high-contrast" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="contrast" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">ניגודיות גבוהה</span>
+                </button>
+                
+                <button onclick="toggleA11y('invert')" id="btn-invert" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="eye" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">היפוך צבעים</span>
+                </button>
+                
+                <button onclick="toggleA11y('big-cursor')" id="btn-big-cursor" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="mouse-pointer-2" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">סמן גדול</span>
+                </button>
+                
+                <button onclick="toggleA11y('highlight-links')" id="btn-highlight-links" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="link-2" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">הדגשת קישורים</span>
+                </button>
+                
+                <button onclick="toggleA11y('readable-font')" id="btn-readable-font" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">פונט קריא</span>
+                </button>
+                
+                <button onclick="toggleA11y('stop-animations')" id="btn-stop-animations" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="pause" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">עצירת אנימציות</span>
+                </button>
+                
+                <button onclick="toggleA11y('dark-mode')" id="btn-dark-mode" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="moon" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">מצב כהה</span>
+                </button>
+                
+                <button onclick="toggleA11y('line-height')" id="btn-line-height" class="p-3 rounded-xl border-2 border-gray-200 bg-white hover:bg-gray-50 transition-all flex flex-col items-center gap-2">
+                    <i data-lucide="align-justify" class="w-6 h-6"></i>
+                    <span class="text-xs font-medium">ריווח שורות</span>
+                </button>
+            </div>
+            
+            <!-- Reset Button -->
+            <button onclick="resetA11y()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl font-medium transition-colors flex items-center justify-center gap-2 mt-2">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                איפוס הגדרות
+            </button>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-gray-50 px-4 py-2 text-center text-xs text-gray-500 border-t">
+            האתר מונגש לנגישות
+        </div>
+    </div>
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Gallery Data
+        const galleryImages = [
+            { src: 'images/date-book.png', title: 'תאריך שחשוב לכם', desc: 'תאריך חתונה, יום הולדת או כל רגע משמעותי שתרצו לזכור לנצח' },
+            { src: 'images/abstract-art.png', title: 'אובייקט אומנותי מופשט', desc: 'פיסול מורכב בהשראת מנדלות ודפוסים גיאומטריים' },
+            { src: 'images/love-word.png', title: 'אהבה או כל מילה שחשובה לכם', desc: 'מילה בעברית או באנגלית שמסמלת משהו אישי עבורכם' },
+            { src: 'images/house-name.png', title: 'בית או שם של איש יקר', desc: 'הנצחת שם או סמל הבית - מתנה מושלמת לחנוכת בית' },
+            { src: 'images/symbol-heart.png', title: 'סמל או צורה', desc: 'לב, כוכב או כל צורה שתרצו - על מעמד עץ מיוחד' },
+            { src: 'images/heart-ribbon.png', title: 'לב עם סרט', desc: 'לב מפוסל עם סרט קשירה - מתנה רומנטית מושלמת' },
+            { src: 'images/emblem-horses.png', title: 'סמל משפחתי', desc: 'סמל משפחתי או לוגו - מורשת שעוברת בדורות' },
+            { src: 'images/name-rahav.png', title: 'שם אישי', desc: 'השם שלכם או של מישהו יקר - מתנת בר/בת מצווה מושלמת' }
+        ];
+        
+        let currentImageIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.classList.add('lightbox-open');
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.classList.remove('lightbox-open');
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightbox();
+        }
+        
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        }
+        
+        function updateLightbox() {
+            const img = galleryImages[currentImageIndex];
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.title;
+            lightboxTitle.textContent = img.title;
+            lightboxDesc.textContent = img.desc;
+        }
+        
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') nextImage();
+                if (e.key === 'ArrowRight') prevImage();
+            }
+        });
+        
+        // Accessibility Widget
+        const a11yBtn = document.getElementById('a11y-btn');
+        const a11yPanel = document.getElementById('a11y-panel');
+        const a11yClose = document.getElementById('a11y-close');
+        
+        let fontSize = 100;
+        const a11ySettings = {
+            'high-contrast': false,
+            'invert': false,
+            'big-cursor': false,
+            'highlight-links': false,
+            'readable-font': false,
+            'stop-animations': false,
+            'dark-mode': false,
+            'line-height': false
+        };
+        
+        a11yBtn.addEventListener('click', () => {
+            a11yPanel.classList.toggle('hidden');
+        });
+        
+        a11yClose.addEventListener('click', () => {
+            a11yPanel.classList.add('hidden');
+        });
+        
+        function increaseFontSize() {
+            if (fontSize < 150) {
+                fontSize += 10;
+                document.documentElement.style.fontSize = fontSize + '%';
+                document.getElementById('font-size-value').textContent = fontSize + '%';
+            }
+        }
+        
+        function decreaseFontSize() {
+            if (fontSize > 80) {
+                fontSize -= 10;
+                document.documentElement.style.fontSize = fontSize + '%';
+                document.getElementById('font-size-value').textContent = fontSize + '%';
+            }
+        }
+        
+        function toggleA11y(setting) {
+            a11ySettings[setting] = !a11ySettings[setting];
+            const btn = document.getElementById('btn-' + setting);
+            
+            if (a11ySettings[setting]) {
+                btn.classList.remove('border-gray-200', 'bg-white');
+                btn.classList.add('border-blue-500', 'bg-blue-50', 'text-blue-700');
+                document.body.classList.add('a11y-' + setting);
+            } else {
+                btn.classList.add('border-gray-200', 'bg-white');
+                btn.classList.remove('border-blue-500', 'bg-blue-50', 'text-blue-700');
+                document.body.classList.remove('a11y-' + setting);
+            }
+        }
+        
+        function resetA11y() {
+            fontSize = 100;
+            document.documentElement.style.fontSize = '100%';
+            document.getElementById('font-size-value').textContent = '100%';
+            
+            Object.keys(a11ySettings).forEach(setting => {
+                if (a11ySettings[setting]) {
+                    toggleA11y(setting);
+                }
+            });
+        }
+    </script>
+</body>
 </html>
